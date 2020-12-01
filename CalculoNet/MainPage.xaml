@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:CalculoNet"
+             x:Class="CalculoNet.MainPage">
+
+    <TableView Intent="Form" IsEnabled="True" RowHeight="-1" HeightRequest="-2" HasUnevenRows="True" >
+        <TableSection Title="Dados de Entrada">
+            <EntryCell x:Name="txtInicial" Label="Numero Inicial" Placeholder="0" Keyboard="Numeric"  />
+            <EntryCell x:Name="txtFinal" Label="Número Final" Placeholder="0" Keyboard="Numeric"/>
+            <EntryCell x:Name="txtDividendo" Label="Dividido Por" Placeholder="0" Keyboard="Numeric"/>
+        </TableSection>
+
+        <TableSection>
+            <ViewCell>
+                <ViewCell.View>
+                    <StackLayout>
+                        <Button x:Name="btnCalcular"
+                                Text="Calcular"
+                                Clicked="BtnCalcular_OnClicked"></Button>
+                    </StackLayout>
+                </ViewCell.View>
+            </ViewCell>
+        </TableSection>
+
+        <TableSection Title="Saída de Valores" >
+            <ViewCell>
+                <ViewCell.View>
+
+                    <StackLayout Padding="5,5" >
+                        <local:EditorXF x:Name="lblResultado" BackgroundColor="#CDFFB2" HeightRequest="280" Placeholder="Valores saem aqui" >
+                        </local:EditorXF>
+                    </StackLayout>
+
+                </ViewCell.View>
+            </ViewCell>
+        </TableSection>
+
+        <TableSection>
+            <ViewCell>
+                <ViewCell.View>
+                    <StackLayout>
+                        <Button x:Name="btnLimpar"
+                                Text="Limpar"
+                                Clicked="btnLimpar_Clicked"></Button>
+                    </StackLayout>
+                </ViewCell.View>
+            </ViewCell>
+        </TableSection>
+
+    </TableView>
+
+</ContentPage>
